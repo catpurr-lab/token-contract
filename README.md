@@ -46,5 +46,5 @@ This project is licensed under the [MIT License](LICENSE).
 ## Contact
 
 For support or any queries:
-- Official Telegram Channel: [CatpurrCommunity](https://t.me/meowcatpurr)
+- Official Telegram Channel: [Catpurr Meow Meow](https://t.me/meowcatpurr)
 - Twitter: [@catpurr](https://twitter.com/catpurr_io)
