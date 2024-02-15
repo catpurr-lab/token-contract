@@ -19,9 +19,13 @@ npm install
 npx hardhat compile
 ```
 
-## Contract Address
+## Contract Addresses
 
-The main contract for Catpurr can be found [here](https://github.com/catpurr-lab/token-contract/blob/main/contracts/Catpurr.sol).
+ZeroTaxHandler deployed to: 0x1F34DdE0B8808a9246E769dDfb723FEC384BEe65
+ZeroTreasuryHandler deployed to: 0xd79F9d3a65d706f8E1d3a8F35C56FD0a5bD3edeD
+CATPURR deployed to: 0x20bc80955b3893b012Bc0FBa3d1605de57E00c1c
+ExponentialTaxHandler deployed to: 0x57fb5d58E28d1306fE96a6313ea19DF0731C8bE7
+TreasuryHandler deployed to: 0x3E12d8D1246784ACfCfDD50e68Ed3b0AC5a59ccf
 
 ## Security
 
