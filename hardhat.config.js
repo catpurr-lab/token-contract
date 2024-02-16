@@ -24,6 +24,13 @@ module.exports = {
     }
   },
   defaultNetwork: "testnet",
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://bscscan.com/
+    apiKey: {
+      bsc: process.env.BSCSCAN_API_KEY
+    }
+  },
   networks: {
     testnet: {
       url: 'https://bsc-testnet.blockpi.network/v1/rpc/public',
@@ -32,6 +39,11 @@ module.exports = {
     mainnet: {
       url: 'https://bsc.blockpi.network/v1/rpc/public',
       accounts: [process.env.PRIVATE_KEY]
+    },
+    blastSepolia: {
+      url: 'https://sepolia.blast.io',
+      accounts: [process.env.PRIVATE_KEY],
+      gasPrice: 1000000000,
     }
   }
 };
