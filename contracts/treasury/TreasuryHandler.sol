@@ -61,16 +61,10 @@ contract TreasuryHandler is ITreasuryHandler, Ownable {
             "TreasuryHandler:withdraw:ZERO_ADDRESS: Cannot withdraw zero address."
         );
 
-        if (tokenAddress == address(0)) {
-            // Transfer ETH to treasury
-            treasury.sendValue(amount);
-        } else {
-            // Transfer tokens to treasury
-            if (
-                IERC20(tokenAddress).transfer(address(treasury), amount)
-            ) {
-                emit Withdrawal(tokenAddress, amount);
-            }
+        if (
+            IERC20(tokenAddress).transfer(address(treasury), amount)
+        ) {
+            emit Withdrawal(tokenAddress, amount);
         }
     }
 }

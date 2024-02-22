@@ -4,6 +4,10 @@ const hre = require("hardhat");
 
 const path = require("path");
 
+async function timeoutAwait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 async function main() {
   // This is just a convenience check
   if (network.name === "hardhat") {
@@ -44,14 +48,14 @@ async function main() {
   const catpurr = await Catpurr.deploy(NAME, SYMBOL, zeroTaxHandler.address, zeroTreasuryHandler.address);
   await catpurr.deployed();
 
+  await timeoutAwait(10000);
+
   console.log("CATPURR deployed to:", catpurr.address);
   
   const taxHandler = await hre.ethers.getContractFactory("ExponentialTaxHandler");
   const treasuryHandler = await hre.ethers.getContractFactory("TreasuryHandler");
 
-  const taxHandlerInstance = await taxHandler.deploy(
-    500, // 5%
-  );
+  const taxHandlerInstance = await taxHandler.deploy();
   await taxHandlerInstance.deployed();
   console.log("ExponentialTaxHandler deployed to:", taxHandlerInstance.address);
 

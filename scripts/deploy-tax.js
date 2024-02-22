@@ -13,23 +13,12 @@ async function main() {
   }
 
   // ethers is available in the global scope
-  const [deployer] = await hre.ethers.getSigners();
-  console.log(
-    "Deploying the contracts with the account:",
-    await deployer.getAddress()
-  );
+  const taxHandler = await hre.ethers.getContractFactory("ExponentialTaxHandler");
 
-  console.log("Account balance:", (await deployer.getBalance()).toString());
-  const signers = await hre.ethers.getSigners();
-  const signer = signers[0];
-
-  const treasuryHandler = await hre.ethers.getContractFactory("TreasuryHandler");
-
-  const treasuryHandlerInstance = await treasuryHandler.deploy(
-    signer.address,
-  );
-  await treasuryHandlerInstance.deployed();
-  console.log("TreasuryHandler deployed to:", treasuryHandlerInstance.address);
+  const taxHandlerInstance = await taxHandler.deploy();
+  await taxHandlerInstance.deployed();
+  
+  console.log("ExponentialTaxHandler deployed to:", taxHandlerInstance.address);
 }
 
 main()

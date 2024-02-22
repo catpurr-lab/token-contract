@@ -24,13 +24,14 @@ contract ExponentialTaxHandler is ITaxHandler, Ownable {
 
     /**
      * @notice Set tax rate and base
-     * @param taxRate Tax rate
      */
-    constructor(uint256 taxRate) {
-        _taxRate = taxRate;
+    constructor() {
+        _taxRate = 500; // 5% tax
     }
 
     function setTaxRate(uint256 taxRate) external onlyOwner {
+        require(taxRate <= 2500, "ExponentialTaxHandler:setTaxRate:INVALID_TAX_RATE"); // Tax rate must be between 0% and 25%
+
         _taxRate = taxRate;
     }
 

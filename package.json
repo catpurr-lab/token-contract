@@ -4,7 +4,9 @@
   "description": "A Hardhat project with TypeChain, Ethers, Waffle, and Hardhat Network Helpers",
   "scripts": {
     "test": "hardhat test",
-    "deploy": "npx hardhat run scripts/deploy.js"
+    "deploy": "npx hardhat run scripts/deploy.js",
+    "deploy:tax": "npx hardhat run scripts/deploy-tax.js",
+    "deploy:treasury": "npx hardhat run scripts/deploy-treasury.js"
   },
   "repository": {
     "type": "git",

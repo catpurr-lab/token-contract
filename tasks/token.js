@@ -20,3 +20,11 @@ task("token:setTaxHandler", "Set the tax handler of the token")
     const tokenContract = await ethers.getContractAt("CATPURR", token);
     await tokenContract.setTaxHandler(taxHandler);
   });
+
+task("token:setTreasuryHandler", "Set the treasury handler of the token")
+  .addPositionalParam("token", "The token address")
+  .addPositionalParam("treasuryHandler", "The treasury handler address")
+  .setAction(async ({ token, treasuryHandler }) => {
+    const tokenContract = await ethers.getContractAt("CATPURR", token);
+    await tokenContract.setTreasuryHandler(treasuryHandler);
+  });
